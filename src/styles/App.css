@@ -1,0 +1,41 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+ 
+  .landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.lpBtn1 .lpBtn2 .lpBtn3 {
+    width: 250px;
+    height: 100px;
+    margin: 10px;
+    background-color: #3a3a3c;
+    color: #d11616;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+.lpBtn:active {
+    background-color: #57575a;
+  }
+  

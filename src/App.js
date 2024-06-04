@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { GameProvider } from './context/GameContext';
+import LandingPage from './components/LandingPage';
+import Game from './components/Game';
+import './styles/App.css';
+import './styles/LandingPage.css';
 
 function App() {
+  const [gameLevel, setGameLevel] = React.useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GameProvider>
+      <div className="app">
+        <h1>K2Wordz</h1>
+        {gameLevel ? (
+          <Game level={gameLevel} />
+        ) : (
+          <LandingPage setGameLevel={setGameLevel} />
+        )}
+      </div>
+    </GameProvider>
   );
 }
 
