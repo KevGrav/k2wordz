@@ -5,31 +5,60 @@
     justify-content: center;
   }
   
-  .row {
+.row {
     display: flex;
   }
   
-  .tile {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #3a3a3c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-    font-size: 1.5rem;
-    color: lightskyblue;
-  }
-  
-  .tile.correct {
-    background-color: #68af56;
-  }
-  
-  .tile.present {
-    background-color: #f6f226;
-  }
-  
-  .tile.absent {
-    background-color: #ccdae1;
-  }
-  
+.tile {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #3a3a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  font-size: 1.5rem;
+  color: lightskyblue;
+}
+  /*display: inline-block;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.6s;
+}
+
+.tile.flipped {
+  transform: rotateY(180deg);
+}*/
+
+.tile.correct {
+  background-color: #68af56;
+  color: black;
+}
+
+.tile.present {
+  background-color: #f6f226;
+  color: black;
+}
+
+.tile.absent {
+  background-color: #ccdae1;
+  color: black;
+}
+
+.tile .front,
+.tile .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.tile .back {
+  transform: rotateY(180deg);
+}

@@ -6,17 +6,20 @@ import '../styles/Keyboard.css';
 const keys = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
   ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-  ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
+  ['Z', 'X', 'C', 'V', 'B', 'N', 'M', '⌫']
 ];
 
 const Keyboard = () => {
-  const { addLetter, checkGuess } = useContext(GameContext);
+  const { addLetter, checkGuess, removeLetter } = useContext(GameContext);
   return (
     <div className="keyboard">
       {keys.map((line, lineIndex) => (
         <div key={lineIndex} className="keyboard-line">
           {line.map((key) => (
-            <Key key={key} value={key} onClick={() => addLetter(key)} />
+            <Key 
+              key={key} 
+              value={key} 
+              onClick={() => key === '⌫' ? removeLetter() : addLetter(key)} />
           ))}
         </div>
       ))}

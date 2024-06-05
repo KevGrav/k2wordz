@@ -9,6 +9,8 @@ const useGameContext = ()=>{
 
 const GameProvider = ({ children }) => {
   const [board, setBoard] = useState([]);// [['','',''], [1,2,3], [1,2,3]]
+  //const initialBoard = Array(6).fill().map(() => Array(solution.length).fill({ letter: '', flipped: false }));
+  //const [board, setBoard] = useState(initialBoard);
   const [currentRow, setCurrentRow] = useState(0);
   const [currentCol, setCurrentCol] = useState(0);
   const [solution, setSolution] = useState('');
@@ -50,6 +52,17 @@ const GameProvider = ({ children }) => {
       newBoard[currentRow][currentCol] = letter;
       setBoard(newBoard);
       setCurrentCol(currentCol + 1);
+    } else if (currentCol === solution.length) {
+      alert ('We only need ' + solution.length + ' letters. Please press Enter to see if you are correct');
+    }
+  };
+
+  const removeLetter = () => {
+    if (currentCol > 0 && currentRow < 6) {
+      const newBoard = [...board];
+      newBoard[currentRow][currentCol - 1] = '';
+      setBoard(newBoard);
+      setCurrentCol(currentCol - 1);
     }
   };
 
@@ -62,7 +75,7 @@ const GameProvider = ({ children }) => {
   };
 
   return (
-    <GameContext.Provider value={{ board, addLetter, checkGuess, gameOver, startGame, solution, useGameContext, currentRow}}>
+    <GameContext.Provider value={{ board, addLetter, removeLetter, checkGuess, gameOver, startGame, solution, useGameContext, currentRow}}>
       {children}
     </GameContext.Provider>
   );

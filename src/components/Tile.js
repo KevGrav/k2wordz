@@ -5,7 +5,7 @@ import {GameContext } from '../context/GameContext';
 const Tile = ({ letter, rowIndex, index }) => {
   const {solution, currentRow} = useContext(GameContext)
   
-// check if solution contains letter and/or correct place. Loop index thro solution
+// check if solution contains letter and/or correct place.
 console.log(solution)
 console.log(rowIndex)
   let className = "tile";
@@ -16,12 +16,7 @@ console.log(rowIndex)
       className += " present"
     }
   }
-  //if (letter === 'T') {
-  //  className += " correct";
-  //} else if (letter === 'R') {
-  //  className += " present";
-  //}
-
+  
   return (
     <div className={className}>
       {letter}
