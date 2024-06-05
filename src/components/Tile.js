@@ -14,6 +14,8 @@ console.log(rowIndex)
       className += " correct"
     }else if(solution.includes(letter)){
       className += " present"
+    }else{
+      className += " absent"
     }
   }
   
