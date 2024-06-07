@@ -24,7 +24,7 @@ const Keyboard = () => {
         </div>
       ))}
       <button className="btn" onClick={checkGuess}>Enter</button>
-    </div>
+      </div> // onClick={ () => f1(); f2() }
   );
 };
 

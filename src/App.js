@@ -3,10 +3,9 @@ import { GameProvider } from './context/GameContext';
 import LandingPage from './components/LandingPage';
 import Game from './components/Game';
 import './styles/App.css';
-
+import './styles/Modal.css'; // Add this line to include Modal styles
 function App() {
   const [gameLevel, setGameLevel] = React.useState(null);
-
   return (
     <GameProvider>
       <div className="app">
@@ -20,5 +19,4 @@ function App() {
     </GameProvider>
   );
 }
-
 export default App;
